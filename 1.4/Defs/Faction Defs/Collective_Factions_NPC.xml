@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef ParentName="FactionBase" Name="TheAugmentationCollectiveFactionBase" Abstract="True">
+    <pawnSingular>member</pawnSingular>
+    <pawnsPlural>members</pawnsPlural>
+    <naturalEnemy>true</naturalEnemy>
+    <listOrderPriority>36</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <permanentEnemy>true</permanentEnemy>
+    <leaderTitle>chief</leaderTitle>
+    <factionIconPath>WorldIcon/CollectiveIcon</factionIconPath>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="VanillaExpanded.VMemesE">VME_Fleshcrafters</li>	  
+    </disallowedMemes>	
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">6</Structure_Ideological>
+    </structureMemeWeights>	
+    <techLevel>Industrial</techLevel>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Outlander</li>
+        </categories>
+        <commonality>0.95</commonality>
+      </li>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+        <commonality>0.05</commonality>
+      </li>
+    </backstoryFilters>
+
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Outlander_Standard</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>-70~75</allowedArrivalTemperatureRange>
+    <raidLootMaker>CollectiveFactionRaidLootMaker</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+    
+        <kindDef>Combat</kindDef>
+        <options>
+          <Collective_Villager>4</Collective_Villager>
+          <Collective_Town_Guard>8</Collective_Town_Guard>		
+          <Collective_Melee>4</Collective_Melee>
+          <Collective_Gunner>7</Collective_Gunner>
+          <Collective_HeavySoldier>3</Collective_HeavySoldier>
+          <Collective_Sniper>2</Collective_Sniper>
+          <Collective_enforcer>2</Collective_enforcer>
+          <Collective_Leader>1</Collective_Leader>  
+        
+  </options>
+      </li>  	  
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Collective_Villager>10</Collective_Villager>
+          <Collective_Town_Guard>7</Collective_Town_Guard>
+          <Collective_Sniper>0.2</Collective_Sniper>
+          <Collective_Gunner>2</Collective_Gunner>
+          <Collective_enforcer>2</Collective_enforcer>  
+
+        
+      </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Collective_Villager>10</Collective_Villager>
+          <Collective_Town_Guard>9</Collective_Town_Guard>
+          <Collective_Melee>3</Collective_Melee>
+          <Collective_Gunner>4</Collective_Gunner>  
+
+          <Collective_HeavySoldier>5</Collective_HeavySoldier>
+          <Collective_Sniper>3</Collective_Sniper>
+          <Collective_enforcer>8</Collective_enforcer>
+          <Collective_Leader>3</Collective_Leader>
+
+        </options>
+      </li>	
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Miners</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Collective_Town_Guard>2</Collective_Town_Guard>
+          <Miner>1</Miner>
+        </options>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">
+        <kindDef>Farmers</kindDef>
+        <commonality>1</commonality>
+        <options>
+          <Collective_Town_Guard>2</Collective_Town_Guard>
+          <Farmer>1</Farmer>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>CollectiveFactionRaidLootMaker</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+            <li>Steel</li>			  
+            <li>Silver</li>			
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+
+  <FactionDef ParentName="TheAugmentationCollectiveFactionBase">
+    <defName>TheAugmentationCollective</defName>
+    <label>Augmentation Collective</label>
+    <description>The Augmentation Collective is a group of individuals obsessed with bionic body modifications. They believe that by augmenting their physical and cognitive abilities with technology, they can become stronger, faster, and more intelligent than any unmodified human.</description>
+    <colorSpectrum>
+      <li>(92, 10, 155)</li>
+      <li>(201, 19, 31)</li>
+    </colorSpectrum>
+    <classicIdeo>true</classicIdeo>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+  </FactionDef>
+  
+  
+</Defs>  

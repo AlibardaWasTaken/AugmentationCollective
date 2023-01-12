@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+	<ModMetaData>
+  
+		<name>Augmentation Collective</name>
+  
+		<author>Alibarda</author>
+		
+		<packageId>alibarda.collective</packageId>
+
+		<description>The Augmentation Collective is a group of individuals who are united by their obsession with bionic body modifications. Members believe that the key to unlocking the full potential of the human body lies in augmenting it with advanced technology. They see themselves as pioneers of a new era of humanity, one in which the limits of the flesh are transcended and the possibilities are endless</description>
+		
+		<supportedVersions>
+		<li>1.4</li>
+		</supportedVersions>
+
+	<modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+    </li>
+	</modDependencies>
+	<loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>brrainz.harmony</li>
+	</loadAfter>
+
+</ModMetaData>

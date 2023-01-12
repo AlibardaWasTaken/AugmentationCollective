@@ -1,0 +1,4 @@
+D:\Steam\steamapps\common\RimWorld\Mods\TechFaction\1.4\Assemblies\AC.dll
+D:\Steam\steamapps\common\RimWorld\Mods\TechFaction\Source\AC\AC\obj\Debug\AC.csproj.AssemblyReference.cache
+D:\Steam\steamapps\common\RimWorld\Mods\TechFaction\Source\AC\AC\obj\Debug\AC.csproj.CoreCompileInputs.cache
+D:\Steam\steamapps\common\RimWorld\Mods\TechFaction\Source\AC\AC\obj\Debug\AC.dll

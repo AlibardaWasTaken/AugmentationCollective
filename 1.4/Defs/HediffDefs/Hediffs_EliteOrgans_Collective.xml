@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="Collective_ElitePartBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Ultra</techLevel>
+    
+		<thingCategories>
+			<li>BodyPartsProsthetic</li>
+		</thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.90</drawSize>
+      <color>(217, 219, 147)</color>
+    </graphicData>
+    <statBases>
+		    <MarketValue>3400</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+
+	<!-- MechaElite spine -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicSpine</defName>
+		<label>MechaElite spine</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <labelNoun>a MechaElite spine</labelNoun>
+		<description>An installed MechaElite spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicSpine</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicSpine</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>          
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+        <statOffsets>
+          <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+          <MaxHitPoints>35</MaxHitPoints>
+        </statOffsets>
+			</li>
+		</stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>35</healthPointToAdd>
+      </li>
+    </comps>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicSpine</defName>
+		<label>MechaElite spine</label>
+		<description>The MechaElite spine is an elite artificial body part developed by the Augmentation Collective. It is designed to enhance the body's strength, speed, and agility.\n\nProsthetic is comprised of a series of interconnected components, including structural support elements, motion control systems, and energy storage units.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicSpine</RecipeDef>
+		</descriptionHyperlinks>
+
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicSpine</defName>
+		<label>install MechaElite spine</label>
+		<uiIconThing>Collective_EliteBionicSpine</uiIconThing>
+		<description>Install a MechaElite spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicSpine</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite spine.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicSpine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicSpine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicSpine</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaElite heart -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicHeart</defName>
+		<label>MechaElite heart</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+		<labelNoun>a MechaElite heart</labelNoun>
+		<description>An installed MechaElite heart.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicHeart</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicHeart</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.25</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <naturalHealingFactor>1.3</naturalHealingFactor>
+        
+        <statOffsets>
+          <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+          <MeleeDodgeChance>1.5</MeleeDodgeChance>
+          <ImmunityGainSpeed>0.05</ImmunityGainSpeed>
+          <MaxHitPoints>25</MaxHitPoints>
+          <MeleeHitChance>5</MeleeHitChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>25</healthPointToAdd>
+      </li>
+    </comps>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicHeart</defName>
+		<label>MechaElite heart</label>
+		<description>The MechaElite heart is an advanced bionic body part that is designed to enhance the body's cardiovascular functions.\n\nSpecialized ventricle injects a nanites into the user's bloodstream to optimize the body's functions in real-time, providing a number of benefits.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicHeart</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicHeart</defName>
+		<label>install MechaElite heart</label>
+		<uiIconThing>Collective_EliteBionicHeart</uiIconThing>
+		<description>Install a MechaElite heart.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicHeart</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite heart.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicHeart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicHeart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicHeart</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaElite stomach -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicStomach</defName>
+		<label>MechaElite stomach</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+		<labelNoun>a MechaElite stomach</labelNoun>
+		<description>An installed MechaElite stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicStomach</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+        <makeImmuneTo>
+          <li>GutWorms</li>
+        </makeImmuneTo>
+				<hungerRateFactor>-0.85</hungerRateFactor>
+        <statOffsets>       
+        <ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+          <MaxHitPoints>15</MaxHitPoints>
+          <MeleeDodgeChance>1.5</MeleeDodgeChance>
+          </statOffsets>
+			</li>
+		</stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>15</healthPointToAdd>
+      </li>
+    </comps>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicStomach</defName>
+		<label>MechaElite stomach</label>
+		<description>This advanced stomach is designed to drastically reduce the user's need for food, allowing them to focus on their mission without the distractions of hunger or nutrition.\n\nFitted with advanced digestion and nutrient absorption technology, the MechaElite stomach is able to extract all the necessary nutrients and energy from the small amount of food the wearer consumes.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicStomach</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicStomach</defName>
+		<label>install MechaElite stomach</label>
+		<uiIconThing>Collective_EliteBionicStomach</uiIconThing>
+		<description>Install a MechaElite stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicStomach</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite stomach.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicStomach</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaElite ear -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicEar</defName>
+		<label>MechaElite ear</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+		<labelNoun>a MechaElite ear</labelNoun>
+		<description>An installed MechaElite ear.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicEar</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicEar</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+        <MeleeDodgeChance>0.5</MeleeDodgeChance>
+          <MeleeHitChance>2.5</MeleeHitChance>
+        </statOffsets>
+      </li>
+    </stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicEar</defName>
+		<label>MechaElite ear</label>
+		<description>Fitted with a range of high-tech sensors and microprocessors, the MechaElite ear is able to analyze and anticipate the movements of opponents, providing the wearer with a decisive edge in close quarters combat. The prosthetic also enhances the wearer's senses, allowing them to track and react to their opponents with lightning-fast reflexes.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicEar</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicEar</defName>
+		<label>install MechaElite ear</label>
+		<uiIconThing>Collective_EliteBionicEar</uiIconThing>
+		<description>Install a MechaElite ear.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicEar</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite ear.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicEar</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicEar</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Ear</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicEar</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaElitelung -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicLung</defName>
+		<label>MechaElite lung</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+		<labelNoun>a MechaElite lung</labelNoun>
+		<description>An installed MechaElitelung.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicLung</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicLung</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+        <totalBleedFactor>0.90</totalBleedFactor>
+        <statOffsets>
+          <RestRateMultiplier>0.1</RestRateMultiplier>
+					<ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+          <MaxHitPoints>25</MaxHitPoints>
+				</statOffsets>
+			</li>
+		</stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>25</healthPointToAdd>
+      </li>
+    </comps>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicLung</defName>
+		<label>MechaElite lung</label>
+		<description>Fitted with advanced filtration and purification technology, the MechaElite lung is able to filter out harmful toxins and pollutants from the air the wearer breathes.\n\nThis means that user can operate in polluted cities, chemical factories, and even on battlefields contaminated with chemical weapons without fear of harm.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicLung</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicLung</defName>
+		<label>install MechaElite lung</label>
+		<uiIconThing>Collective_EliteBionicLung</uiIconThing>
+		<description>Install a MechaElite lung.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicLung</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite lung.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicLung</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicLung</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Lung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicLung</addsHediff>
+	</RecipeDef>  
+
+	<!-- MechaElitekidney -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicKidney</defName>
+		<label>MechaElite kidney</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+		<labelNoun>a MechaElite kidney</labelNoun>
+		<description>An installed MechaElite stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicKidney</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.3</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+    		<stages>
+			<li>
+        <statOffsets>
+          <MaxHitPoints>20</MaxHitPoints>
+         </statOffsets>
+			</li>
+		</stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>20</healthPointToAdd>
+      </li>
+    </comps>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicKidney</defName>
+		<label>MechaElite kidney</label>
+		<description>Fitted with advanced filtration and waste removal technology, the MechaElite kidney is able to filter out toxins and impurities from the bloodstream at an enhanced rate.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicKidney</RecipeDef>
+		</descriptionHyperlinks>
+
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicKidney</defName>
+		<label>install MechaElite kidney</label>
+		<uiIconThing>Collective_EliteBionicKidney</uiIconThing>
+		<description>Install a MechaElite kidney.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicKidney</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite kidney.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicKidney</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicKidney</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicKidney</addsHediff>
+	</RecipeDef>  
+
+	<!-- MechaEliteliver -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_EliteBionicLiver</defName>
+		<label>MechaElite liver</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+		<labelNoun>a MechaElite liver</labelNoun>
+		<description>An installed MechaElite stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicLiver</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_EliteBionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.3</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MaxHitPoints>25</MaxHitPoints>
+          </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>25</healthPointToAdd>
+      </li>
+    </comps>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_ElitePartBase">
+		<defName>Collective_EliteBionicLiver</defName>
+		<label>MechaElite liver</label>
+		<description>The MechaElite liver is able to filter out toxins and impurities from the bloodstream at an enhanced rate, allowing user to maintain optimal health and performance even under the most demanding circumstances.\n\nThe prosthetic is made from durable materials, ensuring that it can withstand the rigors of combat and long-term use.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_EliteBionicLiver</RecipeDef>
+		</descriptionHyperlinks>
+
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_EliteBionicLiver</defName>
+		<label>install MechaElite liver</label>
+		<uiIconThing>Collective_EliteBionicLiver</uiIconThing>
+		<description>Install a MechaElite liver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_EliteBionicLiver</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaElite liver.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_EliteBionicLiver</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_EliteBionicLiver</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Liver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_EliteBionicLiver</addsHediff>
+	</RecipeDef>
+
+<!-- SkinArmor -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>Collective_EliteBionicSkin</defName>
+    <label>MechaElite plate skin armor</label>
+    <labelNoun>a MechaElite plate skin armor</labelNoun>
+    <description>...</description>  
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <stages>
+      <li>
+        <statOffsets>
+          <MaxHitPoints>65</MaxHitPoints>
+          <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.1</ArmorRating_Heat>
+          <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>65</healthPointToAdd>
+      </li>
+    </comps>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteBionicSkin</ThingDef>
+    </descriptionHyperlinks>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_ElitePartBase">
+    <defName>Collective_EliteBionicSkin</defName>
+    <label>MechaElite plate skin armor</label>
+    <description>An Installed MechaElite plate skin armor</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallCollective_EliteBionicSkin</RecipeDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallCollective_EliteBionicSkin</defName>
+    <label>install plate skin armor armor</label>
+    <description>Install a plate skin armor armor.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteBionicSkin</ThingDef>
+      <HediffDef>Collective_EliteBionicSkin</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing plate skin armor.</jobString>
+    <skillRequirements>
+      <Medicine>18</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_EliteBionicSkin</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_EliteBionicSkin</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_EliteBionicSkin</addsHediff>
+  </RecipeDef>
+
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveCollective_EliteBionicSkin_Implant</defName>
+    <label>remove plate skin armor</label>
+    <description>Remove MechaElite plate skin armor.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteBionicSkin</ThingDef>
+      <HediffDef>Collective_EliteBionicSkin</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing plate skin armor.</jobString>
+    <removesHediff>Collective_EliteBionicSkin</removesHediff>
+  </RecipeDef>
+
+<!-- MechaEliteEye -->
+<HediffDef ParentName="AddedBodyPartBase">
+    <defName>Collective_EliteBionicEye</defName>
+    <label>MechaElite eye</label>
+      <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <labelNoun>a MechaElite eye</labelNoun>
+    <description>An installed MechaElite eye.</description>
+    <descriptionHyperlinks><ThingDef>Collective_EliteBionicEye</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>Collective_EliteBionicEye</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.4</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+
+     <stages>
+      <li>
+        <statOffsets>
+          <MaxHitPoints>5</MaxHitPoints>
+          <MeleeHitChance>1.5</MeleeHitChance>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <MeleeDodgeChance>3.5</MeleeDodgeChance>  
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>5</healthPointToAdd>
+      </li>
+    </comps>
+  
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_ElitePartBase">
+    <defName>Collective_EliteBionicEye</defName>
+    <label>MechaElite eye</label>
+    <description>The MechaElite eye is the ultimate tool for the modern soldier. It's targeting systems improve the user's accuracy with ranged weapons, while its reflex enhancement systems allow the user to anticipate and evade enemy attacks with lightning-fast reflexes.</description>
+    <descriptionHyperlinks><RecipeDef>InstallCollective_EliteBionicEye</RecipeDef></descriptionHyperlinks>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallCollective_EliteBionicEye</defName>
+    <label>install MechaElite eye</label>
+    <description>Install a MechaElite eye.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteBionicEye</ThingDef>
+      <HediffDef>Collective_EliteBionicEye</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing MechaElite eye.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_EliteBionicEye</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_EliteBionicEye</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Eye</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_EliteBionicEye</addsHediff>
+  </RecipeDef>
+  
+  <!-- EliteMechaMed -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>Collective_EliteMechaMed_Implant</defName>
+    <label>MechaMed implant</label>
+    <labelNoun>a MechaMed implant</labelNoun>
+    <description>An installed MechaMed implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteMechaMed_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>Collective_EliteMechaMed_Implant</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <hungerRateFactor>1.4</hungerRateFactor>
+        <statOffsets>
+          <PainShockThreshold>0.7</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    <tags>
+      <li>Collective_EliteMechaMed_Implant</li>
+    </tags>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_EliteMechaMed_Implant</defName>
+    <label>MechaMed implant</label>
+    <description>The MechaMed implant is a bionic device developed by the Augmentation Collective to suppress pain in individuals who undergo the implantation procedure.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallCollective_EliteMechaMed_Implant</RecipeDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallCollective_EliteMechaMed_Implant</defName>
+    <label>install MechaMed implant</label>
+    <uiIconThing>Collective_EliteMechaMed_Implant</uiIconThing>
+    <description>Install a MechaMed implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteMechaMed_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <jobString>Installing MechaMed implant.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_EliteMechaMed_Implant</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_EliteMechaMed_Implant</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_EliteMechaMed_Implant</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveCollective_EliteMechaMed_Implant</defName>
+    <label>remove MechaMed implant</label>
+    <description>Remove MechaMed implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_EliteMechaMed_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <jobString>Removing MechaMed implant.</jobString>
+    <removesHediff>Collective_EliteMechaMed_Implant</removesHediff>
+  </RecipeDef>
+
+
+  <!-- ProstheticX BladeArm -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>Collective_ProstheticX_BladeArm</defName>
+    <label>ProstheticX Blade-Arm</label>
+
+    <description>The Blade-Arm is a specialized variant of the Bionic ProstheticX arm that is designed for close combat. This advanced prosthetic features a large, razor-sharp blade that is capable of cutting through even the toughest armor with ease.\n\nArm is powered by the same sophisticated bionic system as the standard ProstheticX arm, allowing for seamless control and movement. However, the added weight and bulk of the blade can make it more difficult to dodge melee attacks and may decrease the overall effectiveness of the arm.</description>
+    <labelNoun>an ProstheticX Blade-Arm</labelNoun>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>ProstheticX Blade-Arm</label>
+            <capacities>
+              <li>Cut</li>
+              <li>Stab</li>
+            </capacities>
+            <power>31.0</power>           
+            <cooldownTime>1.05</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+          </li>
+        </tools>
+      </li>
+          <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>40</healthPointToAdd>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>5.5</MeleeHitChance>
+          <MeleeDodgeChance>-2</MeleeDodgeChance>
+          <MaxHitPoints>40</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+
+    <spawnThingOnRemoved>Collective_ProstheticX_BladeArm</spawnThingOnRemoved>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_BladeArm</ThingDef>
+    </descriptionHyperlinks>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>0.85</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_ProstheticX_BladeArm</defName>
+    <label>ProstheticX Blade-Arm</label>
+    <description>Installed ProstheticX Blade-Arm</description>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>Collective_InstallBladeArm</defName>
+    <label>install ProstheticX Blade-Arm</label>
+    <description>Install ProstheticX Blade-Arm.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_BladeArm</ThingDef>
+      <HediffDef>Collective_ProstheticX_BladeArm</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing ProstheticX Blade-Arm.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_ProstheticX_BladeArm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_ProstheticX_BladeArm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Shoulder</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_ProstheticX_BladeArm</addsHediff>
+  </RecipeDef>
+
+  
+  
+  
+  <!-- ProstheticX EmpArm -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>Collective_ProstheticX_EmpArm</defName>
+    <label>ProstheticX Zeus-Arm</label>
+
+    <description>The ProstheticX Zeus-Arm is a specialized variant of the Bionic ProstheticX arm. This advanced prosthetic is equipped with a powerful EMP generator that is capable of delivering a devastating electromagnetic pulse on contact.</description>
+    <labelNoun>an ProstheticX zeus-arm</labelNoun>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>ProstheticX zeus-arm</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>12.0</power>
+            <cooldownTime>0.9</cooldownTime>
+            <extraMeleeDamages>
+              <li>
+                <def>EMP</def>
+                <amount>9</amount>
+              </li>
+            </extraMeleeDamages>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+          </li>
+        </tools>
+      </li>
+         <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>25</healthPointToAdd>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>2.5</MeleeHitChance>
+          <MaxHitPoints>25</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+
+    <spawnThingOnRemoved>Collective_ProstheticX_EmpArm</spawnThingOnRemoved>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_EmpArm</ThingDef>
+    </descriptionHyperlinks>
+    <addedPartProps>
+      <isGoodWeapon>true</isGoodWeapon>
+      <solid>true</solid>
+      <partEfficiency>1.15</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_ProstheticX_EmpArm</defName>
+    <label>ProstheticX zeus-arm</label>
+    <description>Installed ProstheticX zeus-arm.</description>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>Collective_InstallEmpArm</defName>
+    <label>install ProstheticX zeus-arm</label>
+    <description>Install ProstheticX zeus-arm.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_EmpArm</ThingDef>
+      <HediffDef>Collective_ProstheticX_EmpArm</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing ProstheticX zeus-arm.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_ProstheticX_EmpArm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_ProstheticX_EmpArm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Shoulder</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_ProstheticX_EmpArm</addsHediff>
+    
+    
+    
+    
+  </RecipeDef>
+
+
+ <!-- ProstheticX Arm -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>Collective_ProstheticX_Arm</defName>
+    <label>ProstheticX Arm</label>
+
+    <description>The ProstheticX arm is equipped with a range of sensors and actuators that allow it to respond to the user's neural signals, allowing for precise and natural movement. In addition, the arm is equipped with advanced stabilizers and gyroscopes that help to maintain balance and accuracy, making it ideal for tasks such as shooting and melee combat</description>
+    <labelNoun>an ProstheticX Arm</labelNoun>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>14</power>
+            <cooldownTime>2</cooldownTime>
+            <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+            <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+          </li>
+        </tools>
+      </li>
+          <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>25</healthPointToAdd>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>1.5</MeleeHitChance>
+          <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+          <MaxHitPoints>25</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+
+    <spawnThingOnRemoved>Collective_ProstheticX_Arm</spawnThingOnRemoved>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_Arm</ThingDef>
+    </descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.35</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_ProstheticX_Arm</defName>
+    <label>ProstheticX Arm</label>
+    <description>Installed ProstheticX Arm.</description>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>Collective_InstallArm</defName>
+    <label>install ProstheticX Arm</label>
+    <description>Install ProstheticX Arm.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_Arm</ThingDef>
+      <HediffDef>Collective_ProstheticX_Arm</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing ProstheticX Arm.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_ProstheticX_Arm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_ProstheticX_Arm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Shoulder</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_ProstheticX_Arm</addsHediff>
+  </RecipeDef>
+
+  
+   <!-- ProstheticX Leg -->
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>Collective_ProstheticX_Leg</defName>
+    <label>ProstheticX Leg</label>
+    <defaultLabelColor>(217, 219, 147)</defaultLabelColor>
+    <labelNoun>a ProstheticX Leg</labelNoun>
+    <description>An installed ProstheticX Leg.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_Leg</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>Collective_ProstheticX_Leg</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.35</partEfficiency>
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>1.5</MeleeDodgeChance>
+          <MaxHitPoints>25</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="AC.HediffCompProperties_HealthMod">
+        <healthPointToAdd>25</healthPointToAdd>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_ElitePartBase">
+    <defName>Collective_ProstheticX_Leg</defName>
+    <label>ProstheticX Leg</label>
+    <description>The Bionic ProstheticX leg is a revolutionary prosthetic designed to replace a natural leg. This advanced prosthetic is more efficient and durable than a natural leg, providing increased agility.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallCollective_ProstheticX_Leg</RecipeDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>InstallCollective_ProstheticX_Leg</defName>
+    <label>install ProstheticX Leg</label>
+    <description>Install a ProstheticX Leg.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_ProstheticX_Leg</ThingDef>
+      <HediffDef>Collective_ProstheticX_Leg</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing ProstheticX Leg.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_ProstheticX_Leg</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_ProstheticX_Leg</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Leg</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_ProstheticX_Leg</addsHediff>
+  </RecipeDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

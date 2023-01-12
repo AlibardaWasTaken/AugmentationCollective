@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="Collective_MakeShiftBodyPartBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Industrial</techLevel>
+    
+		<thingCategories>
+			<li>BodyPartsProsthetic</li>
+		</thingCategories>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.90</drawSize>
+      <color>(142, 163, 171)</color>
+    </graphicData>
+    <statBases>
+		    <MarketValue>200</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>1</Mass>
+		</statBases>
+	</ThingDef>
+
+	<!-- MechaFragment spine -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicSpine</defName>
+		<label>MechaFragment spine</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+    <labelNoun>a MechaFragment spine</labelNoun>
+		<description>An installed MechaFragment spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicSpine</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicSpine</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.05</offset>
+					</li>          
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicSpine</defName>
+		<label>MechaFragment spine</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicSpine</RecipeDef>
+		</descriptionHyperlinks>
+
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicSpine</defName>
+		<label>install MechaFragment spine</label>
+		<uiIconThing>Collective_MakeShiftBionicSpine</uiIconThing>
+		<description>Install a MechaFragment spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicSpine</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment spine.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicSpine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicSpine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicSpine</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaFragment heart -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicHeart</defName>
+		<label>MechaFragment heart</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+		<labelNoun>a MechaFragment heart</labelNoun>
+		<description>An installed MechaFragment heart.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicHeart</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicHeart</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>0.15</MentalBreakThreshold>
+          <ImmunityGainSpeed>-0.05</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicHeart</defName>
+		<label>MechaFragment heart</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicHeart</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicHeart</defName>
+		<label>install MechaFragment heart</label>
+		<uiIconThing>Collective_MakeShiftBionicHeart</uiIconThing>
+		<description>Install a MechaFragment heart.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicHeart</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment heart.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicHeart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicHeart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicHeart</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaFragment stomach -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicStomach</defName>
+		<label>MechaFragment stomach</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+		<labelNoun>a MechaFragment stomach</labelNoun>
+		<description>An installed MechaFragment stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicStomach</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+				<hungerRateFactor>1.05</hungerRateFactor>
+        <statOffsets>
+        <MentalBreakThreshold>0.05</MentalBreakThreshold>
+        <ImmunityGainSpeed>-0.02</ImmunityGainSpeed>
+          </statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicStomach</defName>
+		<label>MechaFragment stomach</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicStomach</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicStomach</defName>
+		<label>install MechaFragment stomach</label>
+		<uiIconThing>Collective_MakeShiftBionicStomach</uiIconThing>
+		<description>Install a MechaFragment stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicStomach</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment stomach.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicStomach</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaFragment ear -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicEar</defName>
+		<label>MechaFragment ear</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+		<labelNoun>a MechaFragment ear</labelNoun>
+		<description>An installed MechaFragment ear.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicEar</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicEar</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+        <ImmunityGainSpeed>-0.01</ImmunityGainSpeed>
+          </statOffsets>
+      </li>
+    </stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicEar</defName>
+		<label>MechaFragment ear</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicEar</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicEar</defName>
+		<label>install MechaFragment ear</label>
+		<uiIconThing>Collective_MakeShiftBionicEar</uiIconThing>
+		<description>Install a MechaFragment ear.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicEar</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment ear.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicEar</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicEar</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Ear</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicEar</addsHediff>
+	</RecipeDef>
+
+	<!-- MechaFragmentlung -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicLung</defName>
+		<label>MechaFragment lung</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+		<labelNoun>a MechaFragment lung</labelNoun>
+		<description>An installed MechaFragmentlung.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicLung</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicLung</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+
+        <statOffsets>
+          <ImmunityGainSpeed>-0.04</ImmunityGainSpeed>
+					<ToxicEnvironmentResistance>-0.25</ToxicEnvironmentResistance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicLung</defName>
+		<label>MechaFragment lung</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicLung</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicLung</defName>
+		<label>install MechaFragment lung</label>
+		<uiIconThing>Collective_MakeShiftBionicLung</uiIconThing>
+		<description>Install a MechaFragment lung.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicLung</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment lung.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicLung</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicLung</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Lung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicLung</addsHediff>
+	</RecipeDef>  
+
+	<!-- MechaFragmentkidney -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicKidney</defName>
+		<label>MechaFragment kidney</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+		<labelNoun>a MechaFragment kidney</labelNoun>
+		<description>An installed MechaFragment stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicKidney</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+    		<stages>
+			<li>
+        <makeImmuneTo>
+          <li>GutWorms</li>
+        </makeImmuneTo>
+        <statOffsets>
+        <ImmunityGainSpeed>-0.01</ImmunityGainSpeed>
+          </statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicKidney</defName>
+		<label>MechaFragment kidney</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicKidney</RecipeDef>
+		</descriptionHyperlinks>
+
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicKidney</defName>
+		<label>install MechaFragment kidney</label>
+		<uiIconThing>Collective_MakeShiftBionicKidney</uiIconThing>
+		<description>Install a MechaFragment kidney.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicKidney</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment kidney.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicKidney</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicKidney</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicKidney</addsHediff>
+	</RecipeDef>  
+
+	<!-- MechaFragmentliver -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_MakeShiftBionicLiver</defName>
+		<label>MechaFragment liver</label>
+    <defaultLabelColor>(142, 163, 171)</defaultLabelColor>
+		<labelNoun>a MechaFragment liver</labelNoun>
+		<description>An installed MechaFragment stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicLiver</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_MakeShiftBionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>false</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+        <MentalBreakThreshold>0.05</MentalBreakThreshold>
+        <ImmunityGainSpeed>-0.02</ImmunityGainSpeed>
+          </statOffsets>
+      </li>
+    </stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_MakeShiftBodyPartBase">
+		<defName>Collective_MakeShiftBionicLiver</defName>
+		<label>MechaFragment liver</label>
+		<description>...</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_MakeShiftBionicLiver</RecipeDef>
+		</descriptionHyperlinks>
+
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_MakeShiftBionicLiver</defName>
+		<label>install MechaFragment liver</label>
+		<uiIconThing>Collective_MakeShiftBionicLiver</uiIconThing>
+		<description>Install a MechaFragment liver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_MakeShiftBionicLiver</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing MechaFragment liver.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_MakeShiftBionicLiver</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_MakeShiftBionicLiver</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Liver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_MakeShiftBionicLiver</addsHediff>
+	</RecipeDef>
+
+
+
+	
+	</Defs>

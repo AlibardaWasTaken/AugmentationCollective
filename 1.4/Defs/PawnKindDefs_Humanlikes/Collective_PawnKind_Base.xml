@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PawnKindDef Name="Collective_Base" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>TheAugmentationCollective</defaultFactionType>
+    <isFighter>true</isFighter>
+	<combatPower>75</combatPower>
+    <chemicalAddictionChance>0.4</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0.4</combatEnhancingDrugsChance>
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	<apparelColor>(181, 193, 255)</apparelColor>	
+    <apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>	
+    <invNutrition>2.55</invNutrition>
+
+    <weaponMoney>250~1000</weaponMoney>
+    <techHediffsChance>0.5</techHediffsChance>
+    <techHediffsMoney>500~4500</techHediffsMoney>
+    <techHediffsTags>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+      <li>Industrial</li>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <initialWillRange>10~19</initialWillRange>
+    <initialResistanceRange>20~37</initialResistanceRange>
+    <disallowedTraits>
+      <li>BodyPurist</li>
+    </disallowedTraits>
+    <biocodeWeaponChance>0.2</biocodeWeaponChance>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Collective_Base">
+    <defName>Collective_Town_Guard</defName>
+    <label>Guard</label>
+    <combatPower>120</combatPower>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.6~2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+      <li>BeltDefensePop</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelMoney>400~1400</apparelMoney>
+    <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <weaponMoney>250~1000</weaponMoney>
+    <techHediffsChance>0.9</techHediffsChance>
+    <techHediffsMoney>500~1700</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+      <li>Industrial</li>
+      <li>ImplantEmpireCommon</li>
+    </techHediffsTags>
+    <initialWillRange>1~3</initialWillRange>
+    <initialResistanceRange>15~24</initialResistanceRange>
+
+
+
+    <techHediffsRequired>
+      <li>Collective_MakeShiftBionicSpine</li>
+      <li>Collective_MakeShiftBionicStomach</li>
+      <li>Collective_MakeShiftBionicHeart</li>
+      <li>Collective_MakeShiftBionicLiver</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>SimpleProstheticLeg</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">ToughskinGland</li>
+      <li>SimpleProstheticArm</li>
+    </techHediffsRequired>
+
+
+    
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Collective_Base">
+    <defName>Collective_Villager</defName>
+    <label>Member</label>
+    <labelPlural>Members</labelPlural>
+    <combatPower>60</combatPower>
+    <gearHealthRange>0.2~2.0</gearHealthRange>
+    <weaponTags>
+      <li>Gun</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <weaponMoney>70~250</weaponMoney>	
+    <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <techHediffsChance>0.9</techHediffsChance>
+    <techHediffsMoney>100~1000</techHediffsMoney>
+    <apparelMoney>100~200</apparelMoney>
+    <techHediffsTags>
+      <li>Simple</li>
+      <li>ImplantEmpireCommon</li>
+      <li>Industrial</li>
+    </techHediffsTags>
+
+    <techHediffsRequired>
+      <li>Collective_MakeShiftBionicSpine</li>
+      <li>Collective_MakeShiftBionicStomach</li>
+      <li>Collective_MakeShiftBionicHeart</li>
+      <li>Collective_MakeShiftBionicLiver</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+    </techHediffsRequired>
+  </PawnKindDef>
+  
+
+  
+    <PawnKindDef ParentName="Collective_Base" Name="CollectiveGunnerBase" Abstract="True">
+    <label>augmented soldier</label>
+	<labelPlural>augmented soldiers</labelPlural>
+    <combatPower>110</combatPower>
+    <gearHealthRange>0.7~3.2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+	<apparelColor>(149, 152, 171)</apparelColor>	
+    <apparelMoney>500~1400</apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <weaponMoney>430~850</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>5~15</range>
+      </li>
+    </skills>
+      
+      
+      
+      
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="CollectiveGunnerBase">
+    <defName>Collective_Gunner</defName>
+    <initialResistanceRange>6~10</initialResistanceRange>
+
+    <techHediffsRequired>
+      <li>Collective_MakeShiftBionicStomach</li>
+      <li>Collective_MakeShiftBionicHeart</li>
+      <li>Collective_MakeShiftBionicLiver</li>
+      <li>Collective_BionicLung</li>
+      <li>Collective_BionicLung</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+
+      <li>Collective_MakeShiftBionicSpine</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicEar</li>
+    </techHediffsRequired>
+  </PawnKindDef>  
+
+  <PawnKindDef ParentName="CollectiveGunnerBase" Name="CollectiveSniperBase" Abstract="True">
+    <label>augmented sniper</label>
+	<labelPlural>augmented snipers</labelPlural>
+    <combatPower>155</combatPower>
+    <gearHealthRange>0.7~3.2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <weaponMoney>1000~1200</weaponMoney>
+    <weaponTags>
+      <li>SniperRifle</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>11~19</range>
+      </li>
+    </skills>
+
+    
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CollectiveSniperBase">
+    <defName>Collective_Sniper</defName>
+    <initialResistanceRange>20~30</initialResistanceRange>
+    <techHediffsRequired>
+      <li>BionicEye</li>
+      <li>Collective_MakeShiftBionicStomach</li>
+      <li>Collective_BionicLiver</li>
+      <li>Collective_BionicLung</li>
+      <li>Collective_BionicLung</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+
+      <li>Collective_MakeShiftBionicSpine</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicEar</li>
+    </techHediffsRequired>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="Collective_Base">
+    <defName>Collective_Melee</defName>
+    <label>augmented gladiator</label>
+	<labelPlural>augmented gladiators</labelPlural>
+    <apparelColor>(84, 86, 105)</apparelColor>
+    <combatPower>180</combatPower>
+    <canBeSapper>true</canBeSapper>
+    <gearHealthRange>0.7~3.2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_ShieldBelt</li>
+    </apparelRequired>	
+    <apparelMoney>1000~1400</apparelMoney>
+    <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+    
+    <weaponTags>
+      <li>MedievalMeleeDecent</li>
+      <li>MedievalMeleeAdvanced</li>
+    </weaponTags>
+    <weaponMoney>500~1000</weaponMoney>
+    <initialResistanceRange>19~29</initialResistanceRange>
+
+    <forcedTraits>
+      <li>Brawler</li>
+      <li>Transhumanist</li>
+    </forcedTraits>
+
+    <techHediffsRequired>
+      <li>Collective_EliteMechaMed_Implant</li>
+      <li>PowerClaw</li>
+      <li>Collective_MakeShiftBionicLiver</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_BionicHeart</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>BionicLeg</li>
+      <li>BionicLeg</li>
+    </techHediffsRequired>
+    
+  </PawnKindDef>
+  
+ 
+
+  <PawnKindDef ParentName="Collective_Base">
+    <defName>Collective_HeavySoldier</defName>
+    <label>augmented titan</label>
+    <labelPlural>augmented titans</labelPlural>
+    <combatPower>190</combatPower>
+    <gearHealthRange>0.7~3.2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>SpacerMilitary</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>1100~2550</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponMoney>1300~1800</weaponMoney>
+    <weaponTags>
+      <li>GunHeavy</li>
+    </weaponTags>
+    <initialResistanceRange>14~23</initialResistanceRange>
+
+    <techHediffsRequired>
+      <li>Collective_EliteMechaMed_Implant</li>
+      <li>Collective_BionicSpine</li>
+      <li>DeathAcidifier</li>
+      <li>Collective_MakeShiftBionicLiver</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_MakeShiftBionicLung</li>
+      <li>Collective_BionicHeart</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicKidney</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li>Collective_MakeShiftBionicEar</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">StoneskinGland</li>
+    </techHediffsRequired>
+    
+  </PawnKindDef>  
+  
+  <PawnKindDef Abstract="True" Name="CollectiveEliteBase" ParentName="Collective_Base">    
+    <backstoryCryptosleepCommonality>0.4</backstoryCryptosleepCommonality>
+    <gearHealthRange>1~1</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>SpacerMilitary</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelColor>(195, 196, 145)</apparelColor>
+    <apparelMoney>2500~4500</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <inventoryOptions>
+      <subOptionsChooseOne>
+        <li>
+          <thingDef>ComponentSpacer</thingDef>
+          <countRange>1~3</countRange>
+        </li>
+      </subOptionsChooseOne>
+    </inventoryOptions>
+        <forcedTraits>
+      <li>Transhumanist</li>
+    </forcedTraits>
+    
+  </PawnKindDef>
+
+  
+  
+  <PawnKindDef ParentName="CollectiveEliteBase">
+    <defName>Collective_Leader</defName>
+    <combatPower>250</combatPower>
+    <label>Augmented Chief</label>
+    <labelPlural>Augmented Chiefs</labelPlural>
+    <factionLeader>true</factionLeader>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>30~41</initialResistanceRange>
+    <techHediffsMoney>7500~8500</techHediffsMoney>
+
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>16~20</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>18~20</range>
+      </li>
+    </skills>
+    <weaponMoney>500~2000</weaponMoney>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>SpacerGun</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">UltratechMelee</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Bladelink</li>
+    </weaponTags>
+    <techHediffsRequired>
+      <li>Collective_NeuroShield_Implant</li>
+      <li>Collective_EliteMechaMed_Implant</li>
+      <li>Collective_BionicLiver</li>
+      <li>Collective_BionicSpine</li>
+      <li>Collective_BionicHeart</li>
+      <li>Collective_BionicLung</li>
+      <li>Collective_BionicLung</li>
+      <li>Collective_BionicKidney</li>
+      <li>Collective_BionicKidney</li>
+      <li>DeathAcidifier</li>
+      <li>BionicLeg</li>
+      <li>BionicLeg</li>
+      <li>BionicArm</li>
+      <li>BionicArm</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">ToughskinGland</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">AestheticNose</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">AestheticShaper</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Coagulator</li>
+    </techHediffsRequired>
+
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CollectiveEliteBase">
+    <defName>Collective_EliteMemberShooter</defName>
+    <label>Elite Member</label>
+    <combatPower>450</combatPower>
+    <labelPlural>Elite Members</labelPlural>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>30~41</initialResistanceRange>
+    <techHediffsMoney>7500~8500</techHediffsMoney>
+
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>12~20</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>4~10</range>
+      </li>
+    </skills>
+    
+    <weaponMoney>1000~2500</weaponMoney>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>SpacerGun</li>
+    </weaponTags>
+    
+    <techHediffsRequired>
+      <li>Collective_EliteBionicLiver</li>
+      <li>Collective_EliteBionicSpine</li>
+      <li>Collective_EliteBionicHeart</li>
+      <li>Collective_EliteBionicLung</li>
+      <li>Collective_EliteBionicLung</li>
+      <li>Collective_EliteBionicKidney</li>
+      <li>Collective_EliteBionicKidney</li>
+      
+      <li>Collective_EliteMechaMed_Implant</li>
+      <li>Collective_PsyBreaker_Implant</li>
+
+      <li>Collective_ProstheticX_Leg</li>
+      <li>Collective_ProstheticX_Leg</li>
+      
+      <li>Collective_ProstheticX_Arm</li>
+      <li>Collective_ProstheticX_Arm</li>
+
+      <li>Collective_EliteBionicEye</li>
+      <li>Collective_EliteBionicEye</li>
+      
+      <li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+    </techHediffsRequired>
+
+  </PawnKindDef>
+
+
+
+  <PawnKindDef ParentName="CollectiveEliteBase">
+    <defName>Collective_EliteMemberMelee</defName>
+    <label>Elite Champion</label>
+    <combatPower>500</combatPower>
+    <labelPlural>Elite Champions</labelPlural>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>30~41</initialResistanceRange>
+    <techHediffsMoney>7500~8500</techHediffsMoney>
+
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~10</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>17~20</range>
+      </li>
+    </skills>
+    <apparelRequired>
+      <li>Apparel_ShieldBelt</li>
+    </apparelRequired>
+
+
+    <weaponMoney>100</weaponMoney>
+    <weaponTags>
+
+    </weaponTags>
+
+
+
+
+    <techHediffsRequired>
+      <li>Collective_EliteBionicLiver</li>
+      <li>Collective_EliteBionicSpine</li>
+      <li>Collective_EliteBionicHeart</li>
+      <li>Collective_EliteBionicLung</li>
+      <li>Collective_EliteBionicLung</li>
+      <li>Collective_EliteBionicKidney</li>
+      <li>Collective_EliteBionicKidney</li>
+
+      <li>Collective_EliteMechaMed_Implant</li>
+      <li>Collective_PsyBreaker_Implant</li>
+      <li>Collective_EliteBionicSkin</li>
+      
+      <li>Collective_ProstheticX_Leg</li>
+      <li>Collective_ProstheticX_Leg</li>
+
+      <li>Collective_ProstheticX_Arm</li>
+      <li>Collective_ProstheticX_BladeArm</li>
+
+      <li>Collective_EliteBionicEye</li>
+      <li>Collective_EliteBionicEye</li>
+
+      <li>Collective_EliteBionicEar</li>
+      <li>Collective_EliteBionicEar</li>
+
+      <li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+    </techHediffsRequired>
+
+  </PawnKindDef>
+
+
+  <PawnKindDef ParentName="CollectiveEliteBase">
+    <defName>Collective_EliteMemberMeleeEmp</defName>
+    <label>Elite Champion</label>
+    <labelPlural>Elite Champions</labelPlural>
+    <combatPower>500</combatPower>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>30~41</initialResistanceRange>
+    <techHediffsMoney>7500~8500</techHediffsMoney>
+
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~10</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>15~20</range>
+      </li>
+    </skills>
+
+    <apparelRequired>
+      <li>Apparel_ShieldBelt</li>
+    </apparelRequired>
+    
+    <weaponMoney>1000~2500</weaponMoney>
+    <weaponTags>
+      <li>MedievalMeleeAdvanced</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">UltratechMelee</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Bladelink</li>
+    </weaponTags>
+
+    <techHediffsRequired>
+      <li>Collective_EliteBionicLiver</li>
+      <li>Collective_EliteBionicSpine</li>
+      <li>Collective_EliteBionicHeart</li>
+      <li>Collective_EliteBionicLung</li>
+      <li>Collective_EliteBionicLung</li>
+      <li>Collective_EliteBionicKidney</li>
+      <li>Collective_EliteBionicKidney</li>
+
+      <li>Collective_EliteMechaMed_Implant</li>
+      <li>Collective_PsyBreaker_Implant</li>
+      <li>Collective_EliteBionicSkin</li>
+      
+      <li>Collective_ProstheticX_Leg</li>
+      <li>Collective_ProstheticX_Leg</li>
+
+      <li>Collective_ProstheticX_Arm</li>
+      <li>Collective_ProstheticX_EmpArm</li>
+
+      <li>Collective_EliteBionicEye</li>
+      <li>Collective_EliteBionicEye</li>
+      
+      
+      <li>Collective_EliteBionicEar</li>
+      <li>Collective_EliteBionicEar</li>
+
+      <li MayRequire="Ludeon.RimWorld.Royalty">HealingEnhancer</li>
+    </techHediffsRequired>
+
+  </PawnKindDef>
+
+
+
+
+  <PawnKindDef ParentName="Collective_Base">
+    <defName>Collective_enforcer</defName>	
+    <label>cybernetic enforcer</label>
+    <labelPlural>cybernetic enforcers</labelPlural>		
+    <combatPower>250</combatPower>
+    <isFighter>true</isFighter>
+    <gearHealthRange>0.6~2</gearHealthRange>
+    <apparelTags>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>SpacerMilitary</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>1000~5000</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>SpacerGun</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">UltratechMelee</li>	  
+    </weaponTags>
+    <weaponMoney>1800~4000</weaponMoney>
+    <techHediffsChance>0.9</techHediffsChance>
+    <techHediffsMoney>2000~3700</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+      <li>AdvancedWeapon</li>
+    </techHediffsTags>
+    <initialWillRange>26~28</initialWillRange>
+    <initialResistanceRange>30~57</initialResistanceRange>
+
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>10~20</range>
+      </li>
+      <li>
+        <skill>Melee</skill>
+        <range>10~20</range>
+      </li>
+    </skills>
+ <techHediffsRequired>
+    
+    <li>BionicEye</li>
+    <li>BionicEye</li>
+    <li>BionicLeg</li>
+    <li>BionicLeg</li>
+   
+   <li>Collective_EliteMechaMed_Implant</li>
+   <li>Collective_BionicSpine</li>
+   <li>Collective_BionicLung</li>
+   <li>Collective_BionicLung</li>
+   <li>Collective_BionicKidney</li>
+   <li>Collective_BionicKidney</li>
+   <li>Collective_BionicHeart</li> 
+   
+
+   <li>Collective_MakeShiftBionicLiver</li>
+   <li>Collective_MakeShiftBionicEar</li>
+   <li>Collective_MakeShiftBionicEar</li>
+   
+ 
+
+    <li MayRequire="Ludeon.RimWorld.Royalty">ToughskinGland</li>
+   </techHediffsRequired>
+  </PawnKindDef>  
+    
+
+</Defs>

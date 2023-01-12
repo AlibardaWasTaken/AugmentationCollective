@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>Collective_EliteBountyHunt</defName>
+    <label>Elite Augmentation Collective Member bounty hunt</label>
+    <description>A Elite member has been detected here.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>UI/BountyHunt_Elite</expandingIconTexture>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+      <li>Collective_EliteBountyHunt</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>Collective_EliteBountyHuntGen</defName>
+    <linkWithSite>Collective_EliteBountyHunt</linkWithSite>
+    <order>400</order>
+    <genStep Class="AC.Missions.GenStep_HuntElite">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+</Defs>

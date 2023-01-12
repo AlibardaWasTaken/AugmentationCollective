@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="Collective_BodyPartBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Industrial</techLevel>
+		<thingCategories>
+			<li>BodyPartsBionic</li>
+		</thingCategories>
+		<statBases>
+		    <MarketValue>600</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>0.4</Mass>
+		</statBases>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(59, 77, 82)</color>
+    </graphicData>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+  </ThingDef>
+
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_BionicSpine</defName>
+		<label>NeuroColumn spine</label>
+		<labelNoun>a NeuroColumn spine</labelNoun>
+		<description>An installed NeuroColumn spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicSpine</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_BionicSpine</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.15</offset>
+            
+					</li>          
+				</capMods>
+        <statOffsets>
+          <ImmunityGainSpeed>-0.1</ImmunityGainSpeed>
+          <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+        </statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_BionicSpine</defName>
+    <label>NeuroColumn spine</label>
+    <description>The NeuroColumn is a combat bionic spine developed by the Augmentation Collective. It is designed to enhance the agility and endurance of soldiers in the field.\n\nThe NeuroColumn consists of a series of interconnected mechanical vertebrae that are surgically implanted into the recipient's spine.\n\nHowever, one of the disadvantages of the NeuroColumn is that it can reduce the speed at which the body's natural processes function. This can lead to decreased immunity and slower recovery times. Despite this, many soldiers are willing to accept these risks in exchange for the enhanced combat capabilities.</description>
+  </ThingDef>
+
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_BionicSpine</defName>
+		<label>install NeuroColumn spine</label>
+		<description>Install a NeuroColumn spine.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicSpine</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing NeuroColumn spine.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_BionicSpine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_BionicSpine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_BionicSpine</addsHediff>
+	</RecipeDef>
+
+
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_BionicHeart</defName>
+		<label>NeuroNexus heart</label>
+		<labelNoun>a NeuroNexus heart</labelNoun>
+		<description>An installed NeuroNexus heart.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicHeart</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_BionicHeart</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.15</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+    <stages>
+      <li>
+        <naturalHealingFactor>1.2</naturalHealingFactor>
+        <statOffsets>
+          <MentalBreakThreshold>0.05</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_BodyPartBase">
+		<defName>Collective_BionicHeart</defName>
+		<label>NeuroNexus heart</label>
+		<description>The NeuroNexus is a combat bionic heart developed by the Augmentation Collective. It is designed to enhance the body's natural healing abilities, allowing soldiers to recover more quickly from injuries sustained in the field.\n\nThe prosthetic requires a significant amount of energy to function, this can lead to feelings of fatigue and anxiety.</description>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_BionicHeart</defName>
+		<label>install NeuroNexus heart</label>
+		<uiIconThing>Collective_BionicHeart</uiIconThing>
+		<description>Install a NeuroNexus heart.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicHeart</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing NeuroNexus heart.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_BionicHeart</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_BionicHeart</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_BionicHeart</addsHediff>
+	</RecipeDef>
+
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_BionicLung</defName>
+		<label>XFabric lung</label>
+		<labelNoun>a XFabric lung</labelNoun>
+		<description>An installed XFabric lung.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicLung</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_BionicLung</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.15</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<stages>
+			<li>
+        <totalBleedFactor>0.95</totalBleedFactor>
+				<statOffsets>
+					<ToxicEnvironmentResistance>-0.10</ToxicEnvironmentResistance>
+          <ImmunityGainSpeed>-0.05</ImmunityGainSpeed>
+        <RestRateMultiplier>0.05</RestRateMultiplier>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_BodyPartBase">
+		<defName>Collective_BionicLung</defName>
+		<label>XFabric lung</label>
+		<description>The XFabric lung is a combat bionic lung developed by the Augmentation Collective. It is designed to enhance the body's respiratory function. It is also helps to decrease blood loss and improve oxygen delivery to the body's tissues, making it a valuable asset for soldiers on the front lines.\n\nHowever, one of the disadvantages of the XFabric lung is that it can decrease the body's resistance to toxic environments and weaken the immune system. This can make soldiers more vulnerable to illness and disease, and may require additional medical support to maintain optimal health.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_BionicLung</RecipeDef>
+		</descriptionHyperlinks>
+		
+		
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_BionicLung</defName>
+		<label>install XFabric lung</label>
+		<description>Install a XFabric lung.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicLung</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing XFabric lung.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_BionicLung</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_BionicLung</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Lung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_BionicLung</addsHediff>
+	</RecipeDef>  
+
+
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_BionicKidney</defName>
+		<label>XFabric kidney</label>
+		<labelNoun>a XFabric kidney</labelNoun>
+		<description>An installed XFabric kidney.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicKidney</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_BionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.15</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+  		<stages>
+			<li>
+        <painFactor>1.05</painFactor>
+				<statOffsets>
+					<ToxicEnvironmentResistance>0.15</ToxicEnvironmentResistance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_BodyPartBase">
+		<defName>Collective_BionicKidney</defName>
+		<label>XFabric kidney</label>
+		<description>The XFabric kidney is a combat bionic kidney developed by the Augmentation Collective. It is designed to enhance the body's ability to resist and recover from the effects of toxic environments.\n\nThe XFabric kidney is a valuable asset for soldiers operating in hazardous environments, as it helps to protect their health and maintain their combat effectiveness.\n\nHowever, one of the disadvantages of the XFabric kidney is that it can decrease the body's pain tolerance.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_BionicKidney</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_BionicKidney</defName>
+		<label>install XFabric kidney</label>
+		<uiIconThing>Collective_BionicKidney</uiIconThing>
+		<description>Install a XFabric kidney.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicKidney</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing XFabric kidney.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_BionicKidney</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_BionicKidney</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_BionicKidney</addsHediff>
+	</RecipeDef>  
+
+	<!-- liver -->
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>Collective_BionicLiver</defName>
+		<label>XFabric liver</label>
+		<labelNoun>a XFabric liver</labelNoun>
+		<description>An installed XFabric liver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicLiver</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>Collective_BionicKidney</spawnThingOnRemoved>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.15</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+    		<stages>
+			<li>
+        <painFactor>0.85</painFactor>
+        <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+        <capMods>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>    
+				<statOffsets>
+          <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="Collective_BodyPartBase">
+		<defName>Collective_BionicLiver</defName>
+		<label>XFabric liver</label>
+		<description>The XFabric liver is a combat bionic liver developed by the Augmentation Collective. It is designed to enhance the body's natural detoxification processes, increase body's immunity and pain tolerance.\n\nOne of the disadvantages, is that it can decrease the body's metabolism.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallCollective_BionicLiver</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallCollective_BionicLiver</defName>
+		<label>install XFabric liver</label>
+		<uiIconThing>Collective_BionicLiver</uiIconThing>
+		<description>Install a XFabric liver.</description>
+		<descriptionHyperlinks>
+			<ThingDef>Collective_BionicLiver</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Installing XFabric liver.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Collective_BionicLiver</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Collective_BionicLiver</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Liver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Collective_BionicLiver</addsHediff>
+	</RecipeDef>
+
+
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>Collective_NeuroShield_Implant</defName>
+    <label>NeuroShield implant</label>
+    <labelNoun>a NeuroShield implant</labelNoun>
+    <description>An installed NeuroShield implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_NeuroShield_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>Collective_NeuroShield_Implant</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <hungerRateFactor>1.1</hungerRateFactor>
+        <socialFightChanceFactor>0.5</socialFightChanceFactor>
+        <statOffsets>
+          <PawnBeauty>1</PawnBeauty>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+
+        </statOffsets>
+      </li>
+    </stages>
+    <tags>
+      <li>Collective_NeuroShield_Implant</li>
+    </tags>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_NeuroShield_Implant</defName>
+    <label>NeuroShield implant</label>
+    <description>The NeuroShield is a bionic implant developed by the Augmentation Collective. It is designed to enhance mental resilience and emotional stability in individuals who undergo the implantation procedure.\n\nThe NeuroShield consists of a series of sensors and electrodes that are surgically implanted into the brain, and a small processor that is located outside of the body.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallCollective_NeuroShield_Implant</RecipeDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallCollective_NeuroShield_Implant</defName>
+    <label>install NeuroShield implant</label>
+    <uiIconThing>Collective_NeuroShield_Implant</uiIconThing>
+    <description>Install a NeuroShield implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_NeuroShield_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <jobString>Installing NeuroShield implant.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_NeuroShield_Implant</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_NeuroShield_Implant</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_NeuroShield_Implant</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveCollective_NeuroShield_Implant</defName>
+    <label>remove NeuroShield implant</label>
+    <description>Remove NeuroShield implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_NeuroShield_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <jobString>Removing NeuroShield implant.</jobString>
+    <removesHediff>Collective_NeuroShield_Implant</removesHediff>
+  </RecipeDef>
+
+
+
+
+
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>Collective_PsyBreaker_Implant</defName>
+    <label>PsyBreaker implant</label>
+    <labelNoun>a PsyBreaker implant</labelNoun>
+    <description>An installed PsyBreaker implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_PsyBreaker_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>Collective_PsyBreaker_Implant</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <hungerRateFactor>1.05</hungerRateFactor>
+        <statOffsets>
+          <MentalBreakThreshold>0.15</MentalBreakThreshold>
+          <PsychicSensitivity>-1</PsychicSensitivity>
+        </statOffsets>
+      </li>
+    </stages>
+    <tags>
+      <li>Collective_PsyBreaker_Implant</li>
+    </tags>
+  </HediffDef>
+
+  <ThingDef ParentName="Collective_BodyPartBase">
+    <defName>Collective_PsyBreaker_Implant</defName>
+    <label>PsyBreaker implant</label>
+    <description>.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>InstallCollective_PsyBreaker_Implant</RecipeDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>InstallCollective_PsyBreaker_Implant</defName>
+    <label>install PsyBreaker implant</label>
+    <uiIconThing>Collective_PsyBreaker_Implant</uiIconThing>
+    <description>Install a PsyBreaker implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_PsyBreaker_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <jobString>Installing PsyBreaker implant.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Collective_PsyBreaker_Implant</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Collective_PsyBreaker_Implant</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Collective_PsyBreaker_Implant</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>RemoveCollective_PsyBreaker_Implant</defName>
+    <label>remove PsyBreaker implant</label>
+    <description>Remove PsyBreaker implant.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Collective_PsyBreaker_Implant</ThingDef>
+    </descriptionHyperlinks>
+    <jobString>Removing PsyBreaker implant.</jobString>
+    <removesHediff>Collective_PsyBreaker_Implant</removesHediff>
+  </RecipeDef>
+
+
+
+</Defs>
